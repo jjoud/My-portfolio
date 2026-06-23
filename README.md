@@ -41,12 +41,3 @@ I am a **Computer Science graduate (Excellent with Honours)** specializing in Ar
 * **Scroll-Reveal Animations:** Custom, lightweight viewport animations implemented natively with pure JavaScript and CSS.
 * **Interactive Counter Metrics:** Animated counter numbers tracking metrics upon scrolling into view.
 * **Fully Responsive:** Completely optimized for high-fidelity viewing across Desktops, Tablets, and Mobile devices.
-
----
-
-## 🛠️ Local Development
-
-To run this portfolio locally on your machine:
-1. Clone the repository:
-```bash
-   git clone [https://github.com/jjoud/My-portfolio.git](https://github.com/jjoud/My-portfolio.git)
