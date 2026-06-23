@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.toggle('menu-open');
         });
 
-        // Close menu when a link is clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Elegant Scroll-Reveal Automation ---
+    // --- Scroll-Reveal Automation ---
     const revealElements = document.querySelectorAll('.reveal');
     
     const revealOnScroll = () => {
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Trigger initially for hero visibility
+    revealOnScroll();
 
     // --- Active Nav Link Highlighting on Scroll ---
     const sections = document.querySelectorAll('section[id]');
@@ -59,31 +58,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Animated Metric Counter Implementation ---
+    // --- Animated Metric Counter Implementation (3 Elements Format) ---
     const metricsNumbers = document.querySelectorAll('.metric-num');
     let countersStarted = false;
 
     const startCounters = () => {
         metricsNumbers.forEach(counter => {
             const target = +counter.getAttribute('data-target');
-            const increment = target / 40; // Control speed here
+            const increment = target / 40; 
             
             const updateCount = () => {
-                const count = +counter.innerText.replace('+', '').replace('%', '');
+                const count = +counter.innerText.replace('+', '');
                 if (count < target) {
                     let nextVal = Math.ceil(count + increment);
                     if (nextVal > target) nextVal = target;
                     
-                    // Format appropriately based on custom metric parameters
-                    if (target === 5 || target === 20) {
-                        counter.innerText = `${nextVal}+`;
-                    } else if (target === 400) {
-                        counter.innerText = `${nextVal}+`;
-                    } else if (target === 77) {
-                        counter.innerText = `${nextVal}.44%`;
-                    } else {
-                        counter.innerText = nextVal;
-                    }
+                    counter.innerText = `${nextVal}+`;
                     setTimeout(updateCount, 25);
                 }
             };
@@ -91,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Trigger counters only when visible in view window
     const metricsSection = document.querySelector('.metrics-section');
     if (metricsSection) {
         const countObserver = new IntersectionObserver((entries) => {
